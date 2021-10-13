@@ -1,13 +1,13 @@
 package com.example.adventureproject.repository;
 
-import com.example.adventureproject.model.Activities;
+import com.example.adventureproject.model.Activity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface ActivitiesRepository extends JpaRepository<Activities, Integer> {
+public interface ActivityRepository extends JpaRepository<Activity, Integer> {
 
-        List<Activities> findActivitiesByActivities(String Activities);
+        List<Activity> findActivitiesByActivities(String Activities);
 }
 
 

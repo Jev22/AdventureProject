@@ -1,7 +1,7 @@
 package com.example.adventureproject.controller;
 
-import com.example.adventureproject.model.Activities;
-import com.example.adventureproject.repository.ActivitiesRepository;
+import com.example.adventureproject.model.Activity;
+import com.example.adventureproject.repository.ActivityRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class ActivityController {
 
     @Autowired
-    ActivitiesRepository activitiesRepository;
+    ActivityRepository activitiesRepository;
 
     @PostMapping(value="/activity", consumes = "application/json")
+    public ResponseEntity<Activity> newActivity(@RequestBody Activity activity){
+
+    }
 
 
 
