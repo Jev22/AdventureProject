@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class ActivityController {
 
     @Autowired
-    ActivityRepository activitiesRepository;
+    ActivityRepository activityRepository;
 
     @PostMapping(value="/activity", consumes = "application/json")
     public ResponseEntity<Activity> newActivity(@RequestBody Activity activity){
@@ -26,7 +26,7 @@ public class ActivityController {
     @DeleteMapping("activity/{id}")
     public ResponseEntity<Object> deleteActivity (@PathVariable int id) {
         try {
-            activitiesRepository.deleteById(id);
+            activityRepository.deleteById(id);
         } catch (Exception err) {
             return new ResponseEntity<>("Kommune ikke fundet", HttpStatus.NOT_FOUND);
         }
