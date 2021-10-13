@@ -38,7 +38,6 @@ public class Equipment {
         this.equipment_id = equipment_id;
     }
 
-
     @Override
     public String toString() {
         return "Equipment{" +
@@ -47,5 +46,6 @@ public class Equipment {
                 ", equipment_id='" + equipment_id + '\'' +
                 '}';
     }
+
 }
 
