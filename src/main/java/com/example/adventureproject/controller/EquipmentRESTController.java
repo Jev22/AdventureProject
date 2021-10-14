@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(value = "*")
+//@CrossOrigin(value = "*")
+@CrossOrigin("*")
 public class EquipmentRESTController {
 
     @Autowired
@@ -25,7 +26,8 @@ public class EquipmentRESTController {
         return new ResponseEntity<Equipment>(equipment, HttpStatus.CREATED);
     }
 
-    @GetMapping("/equipments")
+
+    @GetMapping("/equipment")
     public List<Equipment> allEquipments() {
         return equipmentRepository.findAll();
     }

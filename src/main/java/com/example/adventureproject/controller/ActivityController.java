@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(value = "*")
+@CrossOrigin("*")
 public class ActivityController {
 
     @Autowired
