@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Activities {
+public class Activity {
 
 
     @Id
@@ -17,7 +17,7 @@ public class Activities {
     private int min_height;
     private int participants;
 
-    public Activities(){
+    public Activity(){
 }
 
     public int getActivityID() {
