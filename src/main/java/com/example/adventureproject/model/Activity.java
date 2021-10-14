@@ -1,12 +1,10 @@
 package com.example.adventureproject.model;
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Activity {
-
 
     @Id
     private int activityID;
@@ -67,6 +65,5 @@ public class Activity {
     public void setParticipants(int participants) {
         this.participants = participants;
     }
-
 
 }

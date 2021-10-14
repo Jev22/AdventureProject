@@ -41,13 +41,12 @@ public class ActivityController {
         return activity;
     }
 
-
     @DeleteMapping("activity/{id}")
     public ResponseEntity<Object> deleteActivity (@PathVariable int id) {
         try {
             activityRepository.deleteById(id);
         } catch (Exception err) {
-            return new ResponseEntity<>("Kommune ikke fundet", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Aktivitet ikke fundet", HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }

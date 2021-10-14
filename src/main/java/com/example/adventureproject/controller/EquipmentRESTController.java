@@ -31,7 +31,7 @@ public class EquipmentRESTController {
     }
 
     @GetMapping("/equipment/{id}")
-    public Equipment getKommune(@PathVariable int id) {
+    public Equipment getEquipment(@PathVariable int id) {
         Optional<Equipment> obj = equipmentRepository.findById(id);
         if (obj.isPresent()) {
             return obj.get();
@@ -53,12 +53,12 @@ public class EquipmentRESTController {
     }
 
     @PutMapping("/equipment/{id}")
-    public ResponseEntity<Equipment> updateKommune(@PathVariable int id, @RequestBody Equipment equipment) {
+    public ResponseEntity<Equipment> updateEquipment(@PathVariable int id, @RequestBody Equipment equipment) {
         System.out.println(id);
         Optional<Equipment> equipmentData = equipmentRepository.findById(id);
         if (equipmentData.isPresent()) {
             Equipment _equipment = equipmentData.get();
-            _equipment.setActivity(equipment.getActivity()); //Denne linje opdatere aktivitetsnavnet
+            _equipment.setActivity(equipment.getActivity()); //Denne linje opdaterer aktivitetsnavnet
             _equipment = equipmentRepository.save(_equipment);
             return new ResponseEntity<>(_equipment, HttpStatus.OK);
         } else {
