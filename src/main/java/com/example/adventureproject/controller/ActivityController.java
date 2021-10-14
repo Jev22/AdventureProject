@@ -19,6 +19,10 @@ public class ActivityController {
     ActivityRepository activityRepository;
 
     @PostMapping(value="/activity", consumes = "application/json")
+    public ResponseEntity<Activity> newActivity(@RequestBody Activity activity){
+        activityRepository.save(activity);
+        return new ResponseEntity<Activity>(activity, HttpStatus.CREATED);
+    }
 
     //Henter liste med alle activities
     @GetMapping("/activity")
