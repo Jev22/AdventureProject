@@ -30,9 +30,9 @@ public class ActivityController {
         return activityRepository.findAll();
     }
 
-    @GetMapping("/activity/{id}")
-    public Activity getActivity(@PathVariable int id) {
-        Optional<Activity> obj = activityRepository.findById(id);
+    @GetMapping("/activity/{activityID}")
+    public Activity getActivity(@PathVariable int activityID) {
+        Optional<Activity> obj = activityRepository.findById(activityID);
         if (obj.isPresent()) {
             return obj.get();
         }
@@ -41,14 +41,28 @@ public class ActivityController {
         return activity;
     }
 
-    @DeleteMapping("activity/{id}")
-    public ResponseEntity<Object> deleteActivity (@PathVariable int id) {
+    @DeleteMapping("activity/{activityID}")
+    public ResponseEntity<Object> deleteActivity (@PathVariable int activityID) {
         try {
-            activityRepository.deleteById(id);
+            activityRepository.deleteById(activityID);
         } catch (Exception err) {
             return new ResponseEntity<>("Aktivitet ikke fundet", HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/activity/{activityID}")
+    public ResponseEntity<Activity> updateActivity(@PathVariable int activityID, @RequestBody Activity activity) {
+        System.out.println(activityID);
+        Optional<Activity> activityData = activityRepository.findById(activityID);
+        if (activityData.isPresent()) {
+            Activity activity1 = activityData.get();
+            activity1.setName(activity.getName());
+            activity1 = activityRepository.save(activity1);
+            return new ResponseEntity<>(activity1, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
 }
