@@ -43,7 +43,7 @@ public class EquipmentRESTController {
         return equipment;
     }
 
-    @GetMapping("equipmentDelete/{id}")
+    @DeleteMapping("equipment/{id}")
     public ResponseEntity<Object> deleteEquipment(@PathVariable int id) {
         System.out.println("Delete kaldt: ID=" + id);
         try {
