@@ -61,6 +61,7 @@ public class EquipmentRESTController {
         if (equipmentData.isPresent()) {
             Equipment _equipment = equipmentData.get();
             _equipment.setActivity(equipment.getActivity()); //Denne linje opdaterer aktivitetsnavnet
+            _equipment.setEquipment_id(equipment.getEquipment_id()); //Denne linje opdaterer udstyr id'et
             _equipment = equipmentRepository.save(_equipment);
             return new ResponseEntity<>(_equipment, HttpStatus.OK);
         } else {
