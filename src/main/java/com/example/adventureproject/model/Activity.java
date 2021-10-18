@@ -65,5 +65,4 @@ public class Activity {
     public void setParticipants(int participants) {
         this.participants = participants;
     }
-
 }
