@@ -40,7 +40,7 @@ public class EmployeeController {
             return obj.get();
         }
         Employee employee = new Employee();
-        employee.setEmployeeFirstName("Not Found");
+        employee.setEmployee_first_name("Not Found");
         return employee;
     }
 
@@ -55,13 +55,13 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("/employee/{employeeId}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable int employeeId,@RequestBody Employee employee){
-        System.out.println(employeeId);
-        Optional<Employee> employeeData = employeeRepository.findById(employeeId);
+    @PutMapping("/employee/{employee_id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable int employee_id,@RequestBody Employee employee){
+        Optional<Employee> employeeData = employeeRepository.findById(employee_id);
         if (employeeData.isPresent()) {
             Employee _employee = employeeData.get();
-            _employee.setEmployeeFirstName(employee.getEmployeeFirstName());
+            _employee.setEmployee_first_name(employee.getEmployee_first_name());
+            _employee.setEmployee_last_name(employee.getEmployee_last_name());
             _employee = employeeRepository.save(_employee);
             return new ResponseEntity<>(_employee, HttpStatus.OK);
         } else {

@@ -9,39 +9,38 @@ public class Employee {
 
 
     @Id
-    private int employeeId;
+    private int employee_id;
 
-    private String employeeFirstName;
-    private String employeeLastName;
+    private String employee_first_name;
+    private String employee_last_name;
 
     //Empty constructor
     public Employee(){}
 
     //Setters & Getters
 
-    public int getEmployeeId() {
-        return employeeId;
+
+    public int getEmployee_id() {
+        return employee_id;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public void setEmployee_id(int employee_id) {
+        this.employee_id = employee_id;
     }
 
-    public String getEmployeeFirstName() {
-        return employeeFirstName;
+    public String getEmployee_first_name() {
+        return employee_first_name;
     }
 
-    public void setEmployeeFirstName(String employeeFirstName) {
-        this.employeeFirstName = employeeFirstName;
+    public void setEmployee_first_name(String employee_first_name) {
+        this.employee_first_name = employee_first_name;
     }
 
-    public String getEmployeeLastName() {
-        return employeeLastName;
+    public String getEmployee_last_name() {
+        return employee_last_name;
     }
 
-    public void setEmployeeLastName(String employeeLastName) {
-        this.employeeLastName = employeeLastName;
+    public void setEmployee_last_name(String employee_last_name) {
+        this.employee_last_name = employee_last_name;
     }
-
-
 }
