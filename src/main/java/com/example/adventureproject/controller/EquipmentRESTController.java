@@ -56,7 +56,6 @@ public class EquipmentRESTController {
 
     @PutMapping("/equipment/{id}")
     public ResponseEntity<Equipment> updateEquipment(@PathVariable int id, @RequestBody Equipment equipment) {
-        System.out.println(id);
         Optional<Equipment> equipmentData = equipmentRepository.findById(id);
         if (equipmentData.isPresent()) {
             Equipment _equipment = equipmentData.get();

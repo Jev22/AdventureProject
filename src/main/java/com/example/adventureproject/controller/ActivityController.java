@@ -59,6 +59,10 @@ public class ActivityController {
         if (activityData.isPresent()) {
             Activity activity1 = activityData.get();
             activity1.setName(activity.getName());
+            activity1.setMin_age(activity.getMin_age());
+            activity1.setMin_height(activity.getMin_height());
+            activity1.setPrice(activity.getPrice());
+            activity1.setParticipants(activity.getParticipants());
             activity1 = activityRepository.save(activity1);
             return new ResponseEntity<>(activity1, HttpStatus.OK);
         } else {
