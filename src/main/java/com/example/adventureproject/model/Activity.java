@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class Activity {
 
     @Id
-    private int activityID;
+    private int ID;
 
     private String name;
     private int price;
@@ -18,12 +18,12 @@ public class Activity {
     public Activity(){
 }
 
-    public int getActivityID() {
-        return activityID;
+    public int getID() {
+        return ID;
     }
 
-    public void setActivityID(int activityID) {
-        this.activityID = activityID;
+    public void setID(int activityID) {
+        this.ID = activityID;
     }
 
     public String getName() {
@@ -62,7 +62,7 @@ public class Activity {
         return participants;
     }
 
-    public void setParticipants(int participants) {
-        this.participants = participants;
+    public void setParticipants(int max_participants) {
+        this.participants = max_participants;
     }
 }
