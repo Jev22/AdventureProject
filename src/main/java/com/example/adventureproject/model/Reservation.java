@@ -12,7 +12,7 @@ public class Reservation {
     private int phoneNumber;
     private int participants;
     private int eventID;
-    private int activityID;
+    private String activityName;
 
     public Reservation() {
     }
@@ -57,11 +57,11 @@ public class Reservation {
         this.eventID = eventID;
     }
 
-    public int getActivityID() {
-        return activityID;
+    public String getActivityName() {
+        return activityName;
     }
 
-    public void setActivityID(int activityID) {
-        this.activityID = activityID;
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
     }
 }
