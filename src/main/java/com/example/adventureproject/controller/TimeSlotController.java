@@ -1,6 +1,7 @@
 package com.example.adventureproject.controller;
 
 import com.example.adventureproject.model.Equipment;
+import com.example.adventureproject.model.Event;
 import com.example.adventureproject.model.TimeSlot;
 import com.example.adventureproject.repository.EquipmentRepository;
 import com.example.adventureproject.repository.TimeSlotRepository;
@@ -31,6 +32,11 @@ public class TimeSlotController {
     @GetMapping("/timeSlot")
     public List<TimeSlot> allTimeSlot() {
         return timeSlotRepository.findAll();
+    }
+
+    @GetMapping("/findTimeSlotByActivityID/{activityID}")
+    public List<TimeSlot> findTimeslotByActivityID(@PathVariable int activityID ) {
+        return timeSlotRepository.findTimeSlotByActivityID(activityID);
     }
 
     @DeleteMapping("timeSlot/{timeSlotID}")

@@ -11,7 +11,7 @@ public class TimeSlot {
     private int timeSlotID;
 
     private String timeSlot;
-    private String activityID;
+    private int activityID;
 
     public TimeSlot() {
     }
@@ -32,11 +32,11 @@ public class TimeSlot {
         this.timeSlot = timeSlot;
     }
 
-    public String getActivityID() {
+    public int getActivityID() {
         return activityID;
     }
 
-    public void setActivityID(String activityID) {
+    public void setActivityID(int activityID) {
         this.activityID = activityID;
     }
 }
