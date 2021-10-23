@@ -1,7 +1,6 @@
 package com.example.adventureproject.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Reservation {
@@ -11,7 +10,6 @@ public class Reservation {
     private String name;
     private int phoneNumber;
     private int participants;
-    private int eventID;
     private String activityName;
 
     public Reservation() {
@@ -47,14 +45,6 @@ public class Reservation {
 
     public void setParticipants(int participants) {
         this.participants = participants;
-    }
-
-    public int getEventID() {
-        return eventID;
-    }
-
-    public void setEventID(int eventID) {
-        this.eventID = eventID;
     }
 
     public String getActivityName() {

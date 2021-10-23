@@ -1,17 +1,23 @@
 package com.example.adventureproject.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Event {
+
     @Id
     private int eventID;
     private String eventActivity;
     private int maxParticipants;
     private String timeSlot;
     private Date date;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "reservationID")
+    private List<Reservation> reservations = new ArrayList<>();
 
     public Event() {
     }
@@ -54,5 +60,13 @@ public class Event {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }
