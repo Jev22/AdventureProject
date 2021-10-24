@@ -15,9 +15,12 @@ public class Event {
     private String timeSlot;
     private Date date;
 
+    /*
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "reservationID")
+
     private List<Reservation> reservations = new ArrayList<>();
+     */
 
     public Event() {
     }
@@ -62,6 +65,7 @@ public class Event {
         this.date = date;
     }
 
+    /*
     public List<Reservation> getReservations() {
         return reservations;
     }
@@ -69,4 +73,5 @@ public class Event {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+     */
 }
