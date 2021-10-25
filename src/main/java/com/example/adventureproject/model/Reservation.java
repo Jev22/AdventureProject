@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Reservation {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int reservationID;
     private String name;
     private int phoneNumber;

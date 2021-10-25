@@ -1,13 +1,17 @@
 package com.example.adventureproject.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Time;
 import java.util.Date;
 
 @Entity
 public class TimeSlot {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int timeSlotID;
 
     private String timeSlot;

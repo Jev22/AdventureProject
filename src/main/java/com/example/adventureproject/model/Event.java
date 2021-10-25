@@ -9,18 +9,12 @@ import java.util.List;
 public class Event {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int eventID;
     private String eventActivity;
     private int maxParticipants;
     private String timeSlot;
     private Date date;
-
-    /*
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "reservationID")
-
-    private List<Reservation> reservations = new ArrayList<>();
-     */
 
     public Event() {
     }
