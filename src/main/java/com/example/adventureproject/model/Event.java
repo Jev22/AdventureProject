@@ -1,9 +1,7 @@
 package com.example.adventureproject.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 public class Event {
@@ -11,9 +9,10 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int eventID;
-    private String eventActivity;
     private int maxParticipants;
     private String timeSlot;
+    private int activityID;
+    private int employeeID;
     private Date date;
 
     public Event() {
@@ -27,12 +26,20 @@ public class Event {
         this.eventID = eventID;
     }
 
-    public String getEventActivity() {
-        return eventActivity;
+    public int getActivityID() {
+        return activityID;
     }
 
-    public void setEventActivity(String eventActivity) {
-        this.eventActivity = eventActivity;
+    public void setActivityID(int activityID) {
+        this.activityID = activityID;
+    }
+
+    public int getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 
     public int getMaxParticipants() {

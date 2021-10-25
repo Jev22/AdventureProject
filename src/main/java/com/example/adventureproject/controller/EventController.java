@@ -29,10 +29,4 @@ public class EventController {
         return eventRepository.findAll();
     }
 
-    @GetMapping("/findEventByName/{eventActivity}")
-    public List<Event> findEventByName(@PathVariable String eventActivity ) {
-        return eventRepository.findEventByEventActivity(eventActivity);
-    }
-
-
 }
