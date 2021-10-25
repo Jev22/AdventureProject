@@ -1,5 +1,7 @@
 package com.example.adventureproject.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,25 +14,33 @@ public class Event {
     private int maxParticipants;
     private String timeSlot;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "activity_id")
     private Activity activity;
-    private int employeeID;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "employeeid")
+    private Employee employee;
     private Date date;
 
     public Event() {
     }
 
 
-
-
-
-    public int getEmployeeID() {
-        return employeeID;
+    public Activity getActivity() {
+        return activity;
     }
 
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
+    public void setActivity(Activity activity) {
+        this.activity = activity;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public int getEventID() {

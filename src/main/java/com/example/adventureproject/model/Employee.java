@@ -1,21 +1,22 @@
 package com.example.adventureproject.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Employee {
-
-
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employee_id;
 
     private String employee_first_name;
     private String employee_last_name;
+
 
     //Empty constructor
     public Employee(){}

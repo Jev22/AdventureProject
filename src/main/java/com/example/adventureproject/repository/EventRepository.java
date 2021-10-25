@@ -9,6 +9,4 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
 
         List<Event> findEventByActivityID(int activityID);
 
-        List<Event> findEventAndJoinedTables(Integer id);
-
 }

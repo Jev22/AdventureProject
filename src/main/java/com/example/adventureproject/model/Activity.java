@@ -1,7 +1,11 @@
 package com.example.adventureproject.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Activity {
@@ -16,11 +20,8 @@ public class Activity {
     private int min_height;
     private int participants;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "activity")
-    private List<Event> events;
-
     public Activity(){
-}
+    }
 
     public int getID() {
         return ID;
@@ -28,14 +29,6 @@ public class Activity {
 
     public void setID(int activityID) {
         this.ID = activityID;
-    }
-
-    public List<Event> getEvents() {
-        return events;
-    }
-
-    public void setEvents(List<Event> events) {
-        this.events = events;
     }
 
     public String getName() {
