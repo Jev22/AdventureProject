@@ -1,9 +1,7 @@
 package com.example.adventureproject.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Activity {
@@ -18,6 +16,9 @@ public class Activity {
     private int min_height;
     private int participants;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "activity")
+    private List<Event> events;
+
     public Activity(){
 }
 
@@ -27,6 +28,14 @@ public class Activity {
 
     public void setID(int activityID) {
         this.ID = activityID;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
     }
 
     public String getName() {

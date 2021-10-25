@@ -11,11 +11,26 @@ public class Event {
     private int eventID;
     private int maxParticipants;
     private String timeSlot;
-    private int activityID;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "activity_id")
+    private Activity activity;
     private int employeeID;
     private Date date;
 
     public Event() {
+    }
+
+
+
+
+
+    public int getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 
     public int getEventID() {
@@ -24,22 +39,6 @@ public class Event {
 
     public void setEventID(int eventID) {
         this.eventID = eventID;
-    }
-
-    public int getActivityID() {
-        return activityID;
-    }
-
-    public void setActivityID(int activityID) {
-        this.activityID = activityID;
-    }
-
-    public int getEmployeeID() {
-        return employeeID;
-    }
-
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
     }
 
     public int getMaxParticipants() {
