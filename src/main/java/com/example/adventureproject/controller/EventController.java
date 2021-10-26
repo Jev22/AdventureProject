@@ -32,7 +32,7 @@ public class EventController {
 
     @GetMapping("/findEventByActivityID/{activityID}")
     public List<Event> findEventByActivityID(@PathVariable int activityID ) {
-        return eventRepository.findEventByActivityID(activityID);
+        return eventRepository.findEventByActivity_ActivityID(activityID);
     }
 
 

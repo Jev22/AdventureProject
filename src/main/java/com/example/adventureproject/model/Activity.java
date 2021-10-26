@@ -12,7 +12,8 @@ public class Activity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    @Column(name = "activityID")
+    private int activityID;
 
     private String name;
     private int price;
@@ -20,15 +21,29 @@ public class Activity {
     private int min_height;
     private int participants;
 
+    @OneToMany
+    @JoinColumn(name = "activityID")
+    @JsonBackReference
+    private Set<Event> events = new HashSet<>();
+
+
     public Activity(){
     }
 
-    public int getID() {
-        return ID;
+    public int getActivityID() {
+        return activityID;
     }
 
-    public void setID(int activityID) {
-        this.ID = activityID;
+    public void setActivityID(int activityID) {
+        this.activityID = activityID;
+    }
+
+    public Set<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Set<Event> events) {
+        this.events = events;
     }
 
     public String getName() {

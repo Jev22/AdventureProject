@@ -15,33 +15,20 @@ public class Event {
     private String timeSlot;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "activity_id")
+    @JoinColumn(name = "activityID")
     private Activity activity;
 
+    /*
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "employeeid")
     private Employee employee;
+     */
+
     private Date date;
 
     public Event() {
     }
 
-
-    public Activity getActivity() {
-        return activity;
-    }
-
-    public void setActivity(Activity activity) {
-        this.activity = activity;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
 
     public int getEventID() {
         return eventID;
@@ -49,6 +36,14 @@ public class Event {
 
     public void setEventID(int eventID) {
         this.eventID = eventID;
+    }
+
+    public Activity getActivity() {
+        return activity;
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
     }
 
     public int getMaxParticipants() {

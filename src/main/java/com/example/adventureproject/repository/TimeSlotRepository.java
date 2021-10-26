@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface TimeSlotRepository extends JpaRepository<TimeSlot, Integer> {
 
-    List<TimeSlot> findTimeSlotByActivityID(int id);
+    List<TimeSlot> findTimeSlotByActivityID(int activityID);
 
 }
