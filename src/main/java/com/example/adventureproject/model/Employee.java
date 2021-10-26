@@ -10,7 +10,7 @@ import java.util.Set;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int employee_id;
+    private int employeeID;
 
     private String employee_first_name;
     private String employee_last_name;
@@ -20,14 +20,17 @@ public class Employee {
     public Employee(){}
 
     //Setters & Getters
+    @OneToMany
+    @JoinColumn(name = "employeeID")
+    @JsonBackReference
+    private Set<Event> events = new HashSet<>();
 
-
-    public int getEmployee_id() {
-        return employee_id;
+    public int getEmployeeID() {
+        return employeeID;
     }
 
-    public void setEmployee_id(int employee_id) {
-        this.employee_id = employee_id;
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 
     public String getEmployee_first_name() {

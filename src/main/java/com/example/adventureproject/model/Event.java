@@ -18,17 +18,22 @@ public class Event {
     @JoinColumn(name = "activityID")
     private Activity activity;
 
-    /*
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "employeeid")
+    @JoinColumn(name = "employeeID")
     private Employee employee;
-     */
 
     private Date date;
 
     public Event() {
     }
 
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 
     public int getEventID() {
         return eventID;
